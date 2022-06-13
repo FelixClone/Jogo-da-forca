@@ -4,10 +4,6 @@
 #include <iostream>
 #include <locale.h>
 #include <time.h>
-/*
-    Por o desenho do bonego, para cada erro uma parte do boneco é add
-    consertar o erro CHAR que da para add mais de uma letra
-*/
 
 using namespace std;
 void limpaTela(){
@@ -69,11 +65,10 @@ int Jogar(int numberOfPlayers){
     char letra;
     string letrasJaArriscadas, mensagem, palavraArriscada;
 
-    bool jaDigitouLetra = false,acertouLetra=false; //ele ja inicia falso
+    bool jaDigitouLetra,acertouLetra;
 
     while(palavra != palavraComMascara && maximoDeTentativas - tentativas > 0 && erro < 6){
         limpaTela();
-        //cout << "A palavra secreta é "<<palavra<<" (Tamanho da palavra: "<<tamanhoDaPalavra<<")";
         exibeStatus(palavraComMascara,letrasJaArriscadas,tamanhoDaPalavra,maximoDeTentativas - tentativas,mensagem,erro);
         cout<<"\nDigite uma letra:\nPara arriscar digite (1): \n";
         cin >> letra;
@@ -91,7 +86,7 @@ int Jogar(int numberOfPlayers){
                 jaDigitouLetra=true;
             }
         }
-        if(jaDigitouLetra==false){ //futuro remover
+        if(jaDigitouLetra==false){ 
             letrasJaArriscadas += tolower(letra);
             for(cont = 0; cont < tamanhoDaPalavra; cont++){
                 if(palavra[cont] == tolower(letra)){                     //validando se acertou
@@ -100,18 +95,13 @@ int Jogar(int numberOfPlayers){
                 }                                      
             }
             
-            if(acertouLetra == false){//<--- Desenho Aqui no else
+            if(acertouLetra == false){
                 mensagem = "BOA, VOCÊ ERROU! O.O";
                 erro++;
-                /*
-                    criar um 
-                */
             }else{
                 mensagem = "BOA, VOCÊ ACERTOU! :)";
-                acertouLetra = false;
             }
             tentativas++;
-            //aq     
         }
         jaDigitouLetra = false;         //restart
         acertouLetra = false;
