@@ -1,6 +1,6 @@
 # Jogo da Forca!
 <h4 align="center">
-   🚨<strong>PROJETO MODIFICADO</strong>🚨
+   🚨<strong> PROJETO MODIFICADO </strong>🚨
 </h4>
 <p align="center">
    <a href="#Preview">Preview</a> |
@@ -9,7 +9,9 @@
 
 
 ## Preview
-
+   <div align="center">
+      <img width="100%" src="https://user-images.githubusercontent.com/85363903/173443237-2ac72056-5606-47b5-aca8-8ffd6bbc640f.gif">
+   </div>
 
 ## Curso:
 
